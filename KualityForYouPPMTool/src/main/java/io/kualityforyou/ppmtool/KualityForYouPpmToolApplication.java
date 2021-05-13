@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class KualityForYouPpmToolApplication {
 
 	public static void main(String[] args) {
+		//initial commit
 		SpringApplication.run(KualityForYouPpmToolApplication.class, args);
 	}
 
