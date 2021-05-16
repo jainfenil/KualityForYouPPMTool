@@ -21,4 +21,13 @@ public class ProjectService {
                     project.getProjectIdentifier().toUpperCase() + "' already exits");
         }
     }
+
+    public Project findByProjectIdentifier(String projectId) {
+        Project project = projectRepository.findByProjectIdentifier(projectId.toUpperCase());
+        if (project == null) {
+            throw new ProjectIdException("Project Id '" +
+                    projectId.toUpperCase() + "' does not exits");
+        }
+        return project;
+    }
 }
