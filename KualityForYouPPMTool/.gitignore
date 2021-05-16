@@ -1,9 +1,16 @@
 # Default ignored files
 /shelf/
-/workspace.xml
+/.idea/workspace.xml
 /target/
 !.mvn/wrapper/maven-wrapper.jar
-
+../.DS_Store
+.DS_Store
+src/main/java/io/kualityforyou/ppmtool/.DS_Store
+src/main/java/io/kualityforyou/.DS_Store
+src/main/java/io/.DS_Store
+src/main/java/.DS_Store
+src/main/.DS_Store
+src/.DS_Store
 .idea
 *.iws
 *.iml
