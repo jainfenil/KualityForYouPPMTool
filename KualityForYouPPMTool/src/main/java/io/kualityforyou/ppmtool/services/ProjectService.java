@@ -24,16 +24,25 @@ public class ProjectService {
         }
     }
 
-    public Project findByProjectIdentifier(String projectId) {
-        Project project = projectRepository.findByProjectIdentifier(projectId.toUpperCase());
+    public Project findByProjectIdentifier(String projectIdentifier) {
+        Project project = projectRepository.findByProjectIdentifier(projectIdentifier.toUpperCase());
         if (project == null) {
             throw new ProjectIdException("Project Id '" +
-                    projectId.toUpperCase() + "' does not exits");
+                    projectIdentifier.toUpperCase() + "' does not exits");
         }
         return project;
     }
 
     public Iterable<Project> findAllProjects() {
         return projectRepository.findAll();
+    }
+
+    public void deleteProjectByProjectIdentifier(String projectIdentifier) {
+        Project project = projectRepository.findByProjectIdentifier(projectIdentifier.toUpperCase());
+        if (project == null) {
+            throw new ProjectIdException("Cannot delete Project with Id '" +
+                    projectIdentifier.toUpperCase() + "', This Project does not exits");
+        }
+        projectRepository.delete(project);
     }
 }
